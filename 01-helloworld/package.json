@@ -1,0 +1,35 @@
+{
+  "name": "helloworld",
+  "version": "0.0.1",
+  "description": "Hello World App in Angular 2 with Typescript via Run Time Transpiler",
+  "main": "index.html",
+  "scripts": {
+    "start": "http-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/smkamranqadri/learn-typed-angular2/tree/master/01-helloworld"
+  },
+  "keywords": [
+    "Angular",
+    "2",
+    "Typescript",
+    "Hello",
+    "World"
+  ],
+  "author": "Muhammad Kamran <smkamranqadri@yahoo.com>",
+  "license": "ISC",
+  "dependencies": {
+    "angular2": "2.0.0-beta.0",
+    "es6-promise": "3.0.2",
+    "es6-shim": "0.33.3",
+    "reflect-metadata": "0.1.2",
+    "rxjs": "5.0.0-beta.0",
+    "systemjs": "0.19.11",
+    "zone.js": "0.5.10",
+    "typescript": "^1.7.5"
+  },
+  "devDependencies": {
+    "http-server": "^1.3.2"
+  }
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Hello Worl App in Angular 2 with Typescript via Run time Transpiler</title>
+	<!-- Library for Importing System Modules  -->
+	<script src="node_modules/systemjs/dist/system.src.js"></script>
+	<!-- Typescript to transpile -->
+	<script src="node_modules/typescript/lib/typescript.js"></script>
+	<!-- Library of RxJS Programing -->
+	<script src="node_modules/rxjs/bundles/Rx.js"></script>
+	<!-- Library for Supporting ES2015 Features -->
+	<!-- If Browser not support ES2015 -->
+	<script src="node_modules/es6-shim/es6-shim.js"></script>
+	<!-- Angular 2 -->
+	<script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+	<script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+	<!-- Configuration of SystemJS -->
+	<script>
+		System.config({
+	        transpiler: 'typescript', 
+	        typescriptOptions: { emitDecoratorMetadata: true }, 
+	        packages: {
+	        	'app': {defaultExtension: 'ts'}
+	    	} 
+	    });
+		System.import('./app/boot')
+			.then(null, console.error.bind(console));
+	</script>
+</head>
+<body>
+	<helloWorld>Loading...</helloWorld>
+</body>
+</html>
