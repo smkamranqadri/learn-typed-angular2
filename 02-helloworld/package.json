@@ -1,0 +1,39 @@
+{
+  "name": "helloworld",
+  "version": "0.0.1",
+  "description": "Hello World App in Angular 2 with Typescript via Transpiled Version",
+  "main": "index.html",
+  "scripts": {
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "http": "http-server",
+    "start": "concurrent \"npm run tsc:w\" \"npm run http\" "
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/smkamranqadri/learn-typed-angular2/tree/master/02-helloworld"
+  },
+  "keywords": [
+    "Angular",
+    "2",
+    "Typescript",
+    "Hello",
+    "World"
+  ],
+  "author": "Muhammad Kamran <smkamranqadri@yahoo.com>",
+  "license": "ISC",
+  "dependencies": {
+    "angular2": "2.0.0-beta.0",
+    "es6-promise": "3.0.2",
+    "es6-shim": "0.33.3",
+    "reflect-metadata": "0.1.2",
+    "rxjs": "5.0.0-beta.0",
+    "systemjs": "0.19.11",
+    "zone.js": "0.5.10"
+  },
+  "devDependencies": {
+    "concurrently": "^1.0.0",
+    "http-server": "^0.8.5",
+    "typescript": "^1.7.5"
+  }
+}
