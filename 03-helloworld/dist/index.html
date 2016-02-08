@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Hello World App in Angular 2 with Typescript via Automated Workflow using Gulp</title>
+	<!-- Library for Importing System Modules  -->
+	<script src="lib/system.src.js"></script>
+	<!-- Library of RxJS Programing -->
+	<script src="lib/Rx.js"></script>
+	<!-- Library for Supporting ES2015 Features -->
+	<!-- If Browser not support ES2015 -->
+	<!-- <script src="lib/es6-shim.js"></script> -->
+	<!-- Angular 2 -->
+	<script src="lib/angular2-polyfills.js"></script>
+	<script src="lib/angular2.dev.js"></script>
+	<!-- Configuration of SystemJS -->
+	<script>
+		System.config({
+			packages: {
+				app: {
+					format: 'register',
+					defaultExtension: 'js'
+				}
+			}
+		});
+		System.import('app/boot.js')
+			.then(null, console.error.bind(console));
+	</script>
+</head>
+<body>
+	<helloworld>Loading...</helloworld>
+</body>
+</html>
