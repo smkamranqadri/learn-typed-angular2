@@ -1,6 +1,6 @@
-###Hello World App in Angular 2 with Typescript via Run Time Transpiler
+### Hello World App in Angular 2 with Typescript via Run Time Transpiler
 
-####Important Notes
+#### Important Notes
 
 > Angular 2 2.0.0-beta.0 required specific version for other dependencies so make sure before installing.
 > If you are going to type dependencies in package.json then make sure to not mention '^' with version number because it will install latest version.
@@ -10,4 +10,4 @@
 
 > to run this example type npm start
 
-> Make sure your all typescript files will be in app folder as in systemjs config function we had defined custome package named app so he will search files in app folder.
+> Make sure your all typescript files will be in app folder as in systemjs config function we had defined custom package named app so he will search files in app folder.
