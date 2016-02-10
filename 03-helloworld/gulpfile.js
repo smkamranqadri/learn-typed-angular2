@@ -33,19 +33,19 @@ gulp.task('clean', function() {
 });
 
 // Copy Assets
-gulp.task('copy:assets', ['clean'], function() {
+gulp.task('copy:assets', function() {
   return gulp.src([path.assets, path.index, path.nots])
     .pipe(gulp.dest(path.dist));
 });
 
 // copy Libs
-gulp.task('copy:libs', ['copy:assets'], function() {
+gulp.task('copy:libs', function() {
   return gulp.src(path.libs)
     .pipe(gulp.dest(path.distlib));
 });
 
 // TypeScript Transpile
-gulp.task('transpile', ['copy:libs'], function() {
+gulp.task('transpile', function() {
 	return gulp
 		.src(path.ts)
 		.pipe(typescript(tscConfig.compilerOptions))
@@ -53,13 +53,10 @@ gulp.task('transpile', ['copy:libs'], function() {
 });
 
 // Build Project
-gulp.task('build', ['transpile']);
+gulp.task('build', sequence('clean', 'copy:assets', 'copy:libs', 'transpile'));
 
 // Default Task
-gulp.task('default', ['build']);
-
-// Watch Task
-gulp.task('start', sequence('build', 'serve', ['watchts', 'watchhtml', 'watchcss', 'watchindex']));
+gulp.task('default', sequence('build', ['serve', 'watch']));
 
 // Serve Task
 gulp.task('serve', function() {
@@ -69,6 +66,9 @@ gulp.task('serve', function() {
       open: true
     }));
 });
+
+// Watch Task
+gulp.task('watch', ['watchts', 'watchhtml', 'watchcss', 'watchindex']);
 
 // Watch TypeScript
 gulp.task('watchts', function() {

@@ -16,18 +16,18 @@
 
 > In this example we are going to use gulp as our Automated Workflow Manager.
 
-	gulp
-
-> By typing above  command gulp will run default task which is first clean the 'dist' folder then copy our index.html file, then all the assets, then transpile our typescript files and move then to the 'dist' folder. Now 'dist' folder is ready to be deployed
-
-	gulp start
-
-> By typing above command gulp will run start task which will going to first run build task whch does above work then start http server on Port 3000 and reload every time when changes accrued. Also it will watch the changes in Typescript, Html, Css and build that particular file accordingly.
-
 	gulp build
 
-> By typing above command gulp will run build your project in 'dist' folder.
+> By typing above  command gulp will run build task which first clean the 'dist' folder then copy our index.html file, then all the assets & libs and then transpile our typescript files and move then to the 'dist' folder. Now 'dist' folder is ready to be deployed
+
+	gulp
+
+> By typing above command gulp will run default task which will going to first run build task whch does above work then run serve task which will start http server on Port 3000 and reload every time when changes accrued. In parallel it will run watch task which will watch the changes in Typescript, Html, Css and build that particular file accordingly.
 
 	gulp serve
 
-> By typing above command gulp will start serving your project fom  'dist' folder on Port '8000'.
+> By typing above command gulp will start serving your project from 'dist' folder on Port '8000'.
+
+	gulp serve
+
+> By typing above command gulp will start watching your project for changes run build that particular file accordingly.
