@@ -1,2 +1,16 @@
 <h1>Todos</h1>
-<todo></todo>
+<hr>
+<input type="text" #task>
+<input type="button" value="Add Todo" (click)="addTodo(task)">
+<hr>
+<table>
+    <tr>
+        <td width="100">
+            Task
+        </td>
+        <td>
+            Created Date
+        </td>
+    </tr>
+</table>
+<todo *ngFor="#todo of todos" [todo]="todo"></todo>

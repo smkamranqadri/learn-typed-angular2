@@ -1,4 +1,4 @@
-System.register(['angular2/core', '../todo/todo.component'], function(exports_1) {
+System.register(['angular2/core', '../todo/todo.component', '../todo/todo'], function(exports_1) {
     "use strict";
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -9,7 +9,7 @@ System.register(['angular2/core', '../todo/todo.component'], function(exports_1)
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, todo_component_1;
+    var core_1, todo_component_1, todo_1;
     var todosComponent;
     return {
         setters:[
@@ -18,11 +18,26 @@ System.register(['angular2/core', '../todo/todo.component'], function(exports_1)
             },
             function (todo_component_1_1) {
                 todo_component_1 = todo_component_1_1;
+            },
+            function (todo_1_1) {
+                todo_1 = todo_1_1;
             }],
         execute: function() {
             todosComponent = (function () {
                 function todosComponent() {
+                    this.todos = [];
+                    this.todos.push(new todo_1.Todo('Task 1'));
+                    this.todos.push(new todo_1.Todo('Task 2'));
+                    this.todos.push(new todo_1.Todo('Task 3'));
+                    this.todos.push(new todo_1.Todo('Task 4'));
+                    this.todos.push(new todo_1.Todo('Task 5'));
                 }
+                todosComponent.prototype.addTodo = function (task) {
+                    if (task.value) {
+                        this.todos.push(new todo_1.Todo(task.value));
+                        task.value = '';
+                    }
+                };
                 todosComponent = __decorate([
                     core_1.Component({
                         selector: 'todos',

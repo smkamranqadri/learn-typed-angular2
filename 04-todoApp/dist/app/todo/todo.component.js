@@ -24,6 +24,8 @@ System.register(['angular2/core'], function(exports_1) {
                     core_1.Component({
                         selector: 'todo',
                         templateUrl: 'app/todo/todo.component.html',
+                        // styleUrls
+                        inputs: ['todo']
                     }), 
                     __metadata('design:paramtypes', [])
                 ], todoComponent);

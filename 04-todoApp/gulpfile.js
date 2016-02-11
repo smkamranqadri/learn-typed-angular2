@@ -32,10 +32,16 @@ gulp.task('clean', function() {
 	return del(path.dist);
 });
 
+// Copy Index
+gulp.task('copy:index', function() {
+  return gulp.src(path.index)
+    .pipe(gulp.dest(path.dist));
+});
+
 // Copy Assets
 gulp.task('copy:assets', function() {
-  return gulp.src([path.assets, path.index, path.nots])
-    .pipe(gulp.dest(path.dist));
+  return gulp.src([path.assets, path.nots])
+    .pipe(gulp.dest(path.distapp));
 });
 
 // copy Libs
@@ -53,7 +59,7 @@ gulp.task('transpile', function() {
 });
 
 // Build Project
-gulp.task('build', sequence('clean', 'copy:assets', 'copy:libs', 'transpile'));
+gulp.task('build', sequence('clean', 'copy:index', 'copy:assets', 'copy:libs', 'transpile'));
 
 // Default Task
 gulp.task('default', sequence('build', ['serve', 'watch']));
@@ -63,7 +69,7 @@ gulp.task('serve', function() {
   gulp.src('dist')
     .pipe(webserver({
       livereload: true,
-      open: true
+      open: false
     }));
 });
 
