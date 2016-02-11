@@ -19,13 +19,18 @@ System.register(['angular2/core'], function(exports_1) {
         execute: function() {
             todoComponent = (function () {
                 function todoComponent() {
+                    this.deleteRequestEvent = new core_1.EventEmitter();
                 }
+                todoComponent.prototype.deleteRequest = function () {
+                    this.deleteRequestEvent.emit(this.todo);
+                };
                 todoComponent = __decorate([
                     core_1.Component({
                         selector: 'todo',
                         templateUrl: 'app/todo/todo.component.html',
                         // styleUrls
-                        inputs: ['todo']
+                        inputs: ['todo'],
+                        outputs: ['deleteRequestEvent']
                     }), 
                     __metadata('design:paramtypes', [])
                 ], todoComponent);

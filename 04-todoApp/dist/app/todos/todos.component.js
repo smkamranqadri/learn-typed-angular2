@@ -26,17 +26,20 @@ System.register(['angular2/core', '../todo/todo.component', '../todo/todo'], fun
             todosComponent = (function () {
                 function todosComponent() {
                     this.todos = [];
-                    this.todos.push(new todo_1.Todo('Task 1'));
-                    this.todos.push(new todo_1.Todo('Task 2'));
-                    this.todos.push(new todo_1.Todo('Task 3'));
-                    this.todos.push(new todo_1.Todo('Task 4'));
-                    this.todos.push(new todo_1.Todo('Task 5'));
+                    this.todos.push(new todo_1.Todo('Task 1', true));
+                    this.todos.push(new todo_1.Todo('Task 2', false));
+                    this.todos.push(new todo_1.Todo('Task 3', true));
+                    this.todos.push(new todo_1.Todo('Task 4', true));
+                    this.todos.push(new todo_1.Todo('Task 5', false));
                 }
                 todosComponent.prototype.addTodo = function (task) {
                     if (task.value) {
-                        this.todos.push(new todo_1.Todo(task.value));
+                        this.todos.push(new todo_1.Todo(task.value, false));
                         task.value = '';
                     }
+                };
+                todosComponent.prototype.deleteTodo = function (task) {
+                    this.todos.splice(this.todos.indexOf(task, 0), 1);
                 };
                 todosComponent = __decorate([
                     core_1.Component({

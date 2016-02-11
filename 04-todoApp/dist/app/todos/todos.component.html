@@ -5,12 +5,15 @@
 <hr>
 <table>
     <tr>
-        <td width="100">
-            Task
+        <td width="125">
+            <b>Task</b>
+        </td>
+        <td width="400">
+            <b>Created Date</b>
         </td>
         <td>
-            Created Date
+            <b>Action</b>
         </td>
     </tr>
 </table>
-<todo *ngFor="#todo of todos" [todo]="todo"></todo>
+<todo *ngFor="#todo of todos" [todo]="todo" (deleteRequestEvent)="deleteTodo($event)"></todo>
