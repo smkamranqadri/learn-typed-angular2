@@ -13,17 +13,21 @@ export class todosComponent {
 
 	constructor(){
 		this.todos = [];
-		this.todos.push(new Todo('Task 1'));
-		this.todos.push(new Todo('Task 2'));
-		this.todos.push(new Todo('Task 3'));
-		this.todos.push(new Todo('Task 4'));
-		this.todos.push(new Todo('Task 5'));
+		this.todos.push(new Todo('Task 1', true));
+		this.todos.push(new Todo('Task 2', false));
+		this.todos.push(new Todo('Task 3', true));
+		this.todos.push(new Todo('Task 4', true));
+		this.todos.push(new Todo('Task 5', false));
 	}
 
 	addTodo(task: HTMLInputElement){
 		if (task.value) {
-			this.todos.push(new Todo(task.value));
+			this.todos.push(new Todo(task.value, false));
 			task.value = '';
 		}
+	}
+
+	deleteTodo(task: Todo){
+		this.todos.splice(this.todos.indexOf(task, 0),1);
 	}
 }

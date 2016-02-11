@@ -1,10 +1,16 @@
 <table>
     <tr>
+        <td>
+            <input type="checkbox" [(ngModel)]="todo.status">
+        </td>
         <td width="100">
             {{todo.task}}
         </td>
-        <td>
+        <td width="400">
             {{todo.createdDate}}
+        </td>
+        <td>
+            <u><a (click)="deleteRequest()">Delete</a></u>
         </td>
     </tr>
 </table>

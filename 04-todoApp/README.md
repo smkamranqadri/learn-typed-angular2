@@ -1,33 +1,15 @@
-### Hello World App in Angular 2 with Typescript via Automated Workflow using Gulp
+# Todo App in Angular 2 with Typescript via Automated Workflow
 
-#### Important Notes
+## Important Notes
 
-> Angular 2 2.0.0-beta.0 required specific version for other dependencies so make sure before installing.
-> If you are going to type dependencies in package.json then make sure to not mention '^' with version number because it will install latest version.
-> If you are going to install by CLI then mention version with module name like this
+    Seed taken from Hello World - 03 example and build Todo App on top of it.
 
-	npm install systemjs@0.19.11
+    First thing we created Todo Class which represent our Todo as Model in todo.ts located at todo component folder.
 
-> to run this example type npm start.
+    In angular 2 either we will have component or class which can be used as service.
 
-> Make sure your all typescript files will be in app folder as in systemjs config function we had defined custom package named app so he will search files in app folder.
+    Second we created Todo Component which represent View & Controller for single Todo.
 
-> In Index.html at system.config section we have mentioned format: register becuase we have mentioned module: system in tsconfig, here we will tell system.js to import module which are export for systemjs.
+    Last but not least we created Todos Component which is going to represent our collection of Todos.
 
-> In this example we are going to use gulp as our Automated Workflow Manager.
-
-	gulp build
-
-> By typing above  command gulp will run build task which first clean the 'dist' folder then copy our index.html file, then all the assets & libs and then transpile our typescript files and move then to the 'dist' folder. Now 'dist' folder is ready to be deployed
-
-	gulp
-
-> By typing above command gulp will run default task which will going to first run build task whch does above work then run serve task which will start http server on Port 3000 and reload every time when changes accrued. In parallel it will run watch task which will watch the changes in Typescript, Html, Css and build that particular file accordingly.
-
-	gulp serve
-
-> By typing above command gulp will start serving your project from 'dist' folder on Port '8000'.
-
-	gulp serve
-
-> By typing above command gulp will start watching your project for changes run build that particular file accordingly.
+    In Todo Component we are using Inputs to get data from Todos Component (where Collection stores) and Outputs to send back events via Event Emitter.
