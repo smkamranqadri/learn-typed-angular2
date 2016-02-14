@@ -1,0 +1,14 @@
+<table class="table table-hover table-striped table-bordered table-condensed">
+    <tr>
+        <td>
+            <input class="checkbox-inline" type="checkbox" [(ngModel)]="todo.status">
+            {{todo.task}}
+        </td>
+        <td>
+            {{todo.createdDate | date: "medium"}}
+        </td>
+        <td>
+            <a class="center-block btn btn-info" (click)="deleteRequest()">Delete</a>
+        </td>
+    </tr>
+</table>

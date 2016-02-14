@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<base href="/" />
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Todo App in Angular 2 with Typescript via Automated Workflow using Gulp (Bootstrap Version)</title>
+	<!-- Include Bootstrap -->
+	<link rel="stylesheet" href="lib/bootstrap.min.css">
+	<script type="text/javascript" src="lib/bootstrap.min.css"></script>
+	<!-- End Bootstrap -->
+	<!-- Library for Importing System Modules  -->
+	<script src="lib/system.src.js"></script>
+	<!-- Library of RxJS Programing -->
+	<script src="lib/Rx.js"></script>
+	<!-- Library for Supporting ES2015 Features -->
+	<!-- If Browser not support ES2015 -->
+	<!-- <script src="lib/es6-shim.js"></script> -->
+	<!-- Angular 2 -->
+	<script src="lib/angular2-polyfills.js"></script>
+	<script src="lib/angular2.dev.js"></script>
+	<!-- Configuration of SystemJS -->
+	<script>
+		System.config({
+			packages: {
+				app: {
+					format: 'register',
+					defaultExtension: 'js'
+				}
+			}
+		});
+		System.import('app/boot.js')
+			.then(null, console.error.bind(console));
+	</script>
+</head>
+<body>
+	<todoapp>Loading...</todoapp>
+</body>
+</html>
