@@ -9,3 +9,5 @@
 #### 04-todoApp => Todo App in Angular 2 with Typescript via Automated Workflow
 
 #### 05-todoApp-bootstrap => Todo App in Angular 2 with Typescript via Automated Workflow (Bootstrap Version)
+
+#### 06-todoApp-bootstrap => Todo App in Angular 2 with Typescript via Automated Workflow (Material Design Lite Version)
