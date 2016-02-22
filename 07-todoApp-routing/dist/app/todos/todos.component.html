@@ -1,0 +1,16 @@
+<div class="mdl-cell mdl-cell--4-col mdl-cell--4-offset">
+    <div class="mdl-textfield mdl-js-textfield">
+        <form action="#">
+            <input class="mdl-textfield__input" type="text" id="task" #task>
+            <label class="mdl-textfield__label" for="task">Task</label>
+        </form>
+    </div>
+    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-button--accent mdl-button--icon" (click)="addTodo(task)">+</button>
+</div>
+<div class="mdl-cell mdl-cell--4-col mdl-cell--4-offset">
+    <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+        <tr *ngFor="#todo of todos">
+            <todo [todo]="todo" (deleteRequestEvent)="deleteTodo($event)"></todo>
+        </tr>
+    </table>
+</div>

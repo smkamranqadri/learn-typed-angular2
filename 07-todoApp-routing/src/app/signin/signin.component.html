@@ -1,0 +1,17 @@
+<div class="mdl-cell mdl-cell--4-col mdl-cell--4-offset">
+    <div class="mdl-textfield mdl-js-textfield">
+        <input class="mdl-textfield__input" type="text" id="username" #username>
+        <label class="mdl-textfield__label" for="username">User Name</label>
+    </div>
+    <div class="mdl-textfield mdl-js-textfield">
+        <input class="mdl-textfield__input" type="password" #password>
+        <label class="mdl-textfield__label" for="password">Password</label>
+    </div>
+    <div #snackbar class="mdl-js-snackbar mdl-snackbar">
+        <div class="mdl-snackbar__text">{{errMsg}}</div>
+        <button class="mdl-snackbar__action" type="button"></button>
+    </div>
+</div>
+<div class="mdl-cell mdl-cell--4-col mdl-cell--4-offset">
+    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-button--accent" (click)="signin(username, password, snackbar)">Signin</button>
+</div>
