@@ -1,0 +1,32 @@
+<div class="col m4 offset-m4">
+    <div class="section">
+        <h1 class="center-align">Todos</h1>
+    </div>
+    <div class="divider"></div>
+    <div class="card-panel hoverable">
+        <div class="input-field">
+          <input type="text" class="validate"  #task>
+          <label for="task">Task</label>
+        </div>
+        <a class="btn waves-effect waves-light" (click)="addTodo(task)">Add Todo</a>
+    </div>
+    <table class="bordered striped highlight responsive-table">
+        <thead>
+            <tr>
+                <td>
+                    <b>Task</b>
+                </td>
+                <td>
+                    <b>Created Date</b>
+                </td>
+                <td>
+                    <b>Action</b>
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="todo" *ngFor="#todo of todos" [todo]="todo" (deleteRequestEvent)="deleteTodo($event)"></tr>
+        </tbody>
+    </table>
+    <div class="divider"></div>
+</div>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<base href="/" />
+	<meta charset="UTF-8">
+	<title>Todo App in Angular 2 with Typescript via Automated Workflow using Gulp (Materialize Version)</title>
+	<!-- Library for Importing System Modules  -->
+	<script src="lib/system.src.js"></script>
+	<!-- Library of RxJS Programing -->
+	<script src="lib/Rx.js"></script>
+	<!-- Library for Supporting ES2015 Features -->
+	<!-- If Browser not support ES2015 -->
+	<!-- <script src="lib/es6-shim.js"></script> -->
+	<!-- Angular 2 -->
+	<script src="lib/angular2-polyfills.js"></script>
+	<script src="lib/angular2.dev.js"></script>
+	<!-- JQuery -->
+	<script src="lib/jquery.js"></script>
+	<!-- Materialize -->
+	<link href="lib/css/materialize.css" rel="stylesheet" />
+	<script src="lib/js/materialize.js"></script>
+	<!-- Configuration of SystemJS -->
+	<script>
+		System.config({
+			packages: {
+				app: {
+					format: 'register',
+					defaultExtension: 'js'
+				}
+			}
+		});
+		System.import('app/boot.js')
+			.then(null, console.error.bind(console));
+	</script>
+</head>
+<body>
+	<todoapp>Loading...</todoapp>
+</body>
+</html>

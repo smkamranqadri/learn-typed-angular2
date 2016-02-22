@@ -1,0 +1,17 @@
+<!-- <tr> -->
+    <td>
+        <!-- <label [attr.for]="todo.id">{{todo.task}}</label> -->
+        <!-- <input type="checkbox"/> -->
+        <!-- <input type="checkbox" /> -->
+        <!-- <input type="checkbox" class="filled-in" id="filled-in-box" [(ngModel)]="todo.status" /> -->
+        <input type="checkbox"  id="{{todo.id}}" [(ngModel)]="todo.status" />
+        <label [attr.for]="todo.id">{{todo.task}}</label>
+        <!-- <label for="filled-in-box">{{todo.task}}</label> -->
+    </td>
+    <td>
+        {{todo.createdDate | date: 'medium'}}
+    </td>
+    <td>
+        <a class="btn-floating waves-effect waves-light center-align" (click)="deleteRequest()">x</a>
+    </td>
+<!-- </tr> -->
